@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+      
+  </style>
+    <link rel="stylesheet" href="/css/userCanvas.css">
+</head>
+<body>
+
+<section id="dashboard">
+    <div class="text">
+        <div class="text-input">
+            <input type="text" id="titleText" placeholder="Title Text">
+            <div class="metaData">
+                <input type="number" name="" placeholder="Position X" id="titleX">
+                <input type="number" name="" placeholder="Position Y" id="titleY">
+                <input type="color" name="" id="titleColor" class="Color">
+            </div>
+            <div class="selection">
+                <select name="" id="titleFontSize">
+                    <option value="20">20px</option>
+                    <option value="22">22px</option>
+                    <option value="24">24px</option>
+                    <option value="26">26px</option>
+                    <option value="28">28px</option>
+                    <option value="30">30px</option>
+                    <option value="32">32px</option>
+                    <option value="34">34px</option>
+                    <option value="36">36px</option>
+                    <option value="38">38px</option>
+                    <option value="40">40px</option>
+                    <option value="42">42px</option>
+                    <option value="44">44px</option>
+                </select>
+
+                <select name="" id="titleFontWeight">
+                    <option value="normal">Normal</option>
+                    <option value="bold">Bold</option>
+                </select>
+                <select name="" id="titleFontFamily">
+                    <option value="Cairo">Cairo</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Roboto">Roboto</option>
+                </select>
+            </div>
+        </div>
+        <div class="text-input">
+            <textarea id="descriptionText" placeholder="Description Text"></textarea>
+            <div class="metaData">
+                <input type="number" name="" placeholder="Position X" id="descriptionX">
+                <input type="number" name="" placeholder="Position Y" id="descriptionY">
+                <input type="color" name="" id="descriptionColor" class="Color">
+            </div>
+            <div class="selection">
+                <select name="" id="descriptionFontSize">
+                    <option value="20">20px</option>
+                    <option value="22">22px</option>
+                    <option value="24">24px</option>
+                    <option value="26">26px</option>
+                    <option value="28">28px</option>
+                    <option value="30">30px</option>
+                    <option value="32">32px</option>
+                    <option value="34">34px</option>
+                    <option value="36">36px</option>
+                    <option value="38">38px</option>
+                    <option value="40">40px</option>
+                    <option value="42">42px</option>
+                    <option value="44">44px</option>
+                </select>
+
+                <select name="" id="descriptionFontWeight">
+                    <option value="normal">Normal</option>
+                    <option value="bold">Bold</option>
+                </select>
+                <select name="" id="descriptionFontFamily">
+                    <option value="Cairo">Cairo</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Roboto">Roboto</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="templates-labels">
+        <input type="file" id="imageInput" class="custom-button" accept="image/*" required style="display: none;">
+        <label for="imageInput" id="upload-image-button" class="custom-button action-button">Upload Template</label>
+        <button  class="custom-button action-button" id = "saveTemplateButton">Save Template</button>
+    </div>
+    <div class="canvas-container">
+        <canvas id="canvas" width="1080" height="1080"></canvas>
+    </div>
+    <div class="selection">
+        <input type="number" name="" placeholder="Position X" id="phone-x">
+        <input type="number" name="" placeholder="Position Y" id="phone-y">
+        <select name="" id="phoneFontSize">
+            <option value="20">20px</option>
+            <option value="22">22px</option>
+            <option value="24">24px</option>
+            <option value="26">26px</option>
+            <option value="28">28px</option>
+            <option value="30">30px</option>
+            <option value="32">32px</option>
+            <option value="34">34px</option>
+            <option value="36">36px</option>
+            <option value="38">38px</option>
+            <option value="40">40px</option>
+            <option value="42">42px</option>
+            <option value="44">44px</option>
+        </select>
+
+        <select name="" id="phoneFontWeight">
+            <option value="normal">Normal</option>
+            <option value="bold">Bold</option>
+        </select>
+        <select name="" id="phoneFontFamily">
+            <option value="Arial">Arial</option>
+            <option value="Times New Roman">Times New Roman</option>
+            <option value="Courier New">Courier New</option>
+            <option value="Verdana">Verdana</option>
+        </select>
+        <input type="color" name=""class="Color">
+        <input type="tel" id="phoneNumber" placeholder="Phone Number">
+        <!-- <button id="add-phone-button" class="custom-button">Add Phone Number</button> -->
+    </div>
+    <div class="canvas-controls">
+        <div class="text">
+        <button id="delete-button" class="custom-button">Clear</button>
+        <button id="save-button" class="custom-button">Save</button>
+        <button id="download-button" class="custom-button" onclick="downloadImage()">Download</button>
+    </div>
+</div>
+
+    <div class="template-placeholder">
+        <div id="template1" class="template">
+            <img src="" id="templatePreview1" class="template-preview" alt="Template 1 Preview">
+            <button id="deleteTemplate1Btn" class="delete-button" onclick="deleteTemplate('template1')">Delete</button>
+        </div>
+    
+        <div id="template2" class="template">
+            <img src="" id="templatePreview2" class="template-preview" alt="Template 2 Preview">
+            <button id="deleteTemplate2Btn" class="delete-button" onclick="deleteTemplate('template1')">Delete</button>
+        </div>
+    </div>
+</section>
+<section id="gallery">
+    <h2>User Gallery</h2>
+    <div class="gallery-place">
+        
+    </div>
+</section>
+<button id="backButton" class="custom-button">Back</button> <!-- Back button added here -->
+<script>
+
+</script>
+<script src="./script/userGallery.js"></script>
+</body>
+</html>

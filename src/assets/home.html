@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Editor</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- Start Header -->
+<div class="nav-bar">
+  <div class="container">
+    <a href="#" class="logo" >Easy</a>
+    <ul class="main-nav">
+      <li><a  href="#canvas-container">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a id="logout" href="#" onclick="logout()">Log Out</a></li>
+    </ul>
+  </div>
+</div>
+<header>
+  <div class="overlay">
+    <h1 class="main-title">Welcome to Easy</h1>
+    <h3>Reasons for Choosing US</h3>
+    <p>نسعي لتحقيق التميز في عالم التصميم و التطوير نعتبر ان كل مشروع فرصة لبناء شراكة مستدامة مع عملاءنا حيث نجمع الاستماع الجيد والتحليل الدقيق لضمان تلبية توقعاتهم وتحقيق رؤيتهم بكفاءة</p>
+    <br>
+    <a href="#canvas-container"><button>Start</button></a>
+  </div>
+</header>
+<!-- End Header -->
+
+<div class="background">
+  <div class="containerz">
+      <!-- Padding and margin with another div -->
+      <div class="controls-container">
+
+          <!-- Canvas container -->
+          <div id="canvas-container">
+              <canvas id="canvas" width="1080" height="1080"></canvas>
+          </div>
+
+          <!-- Toolbar -->
+          <div id="toolbar">
+              <label for="imageInput" id="upload-image-button" class="custom-button">Upload Image</label>
+              <input type="file" id="imageInput" accept="image/*" required style="display: none;">
+              <button class="custom-button" id="deleteButton">Clear</button>
+              <button class="custom-button" id="saveButton" >Save</button>
+              <button class="arrow-btn"><span class="arrow-up">&#8593;</span></button>
+              <button class="arrow-btn"><span class="arrow-down">&#8595;</span></button>
+
+          </div>
+
+          <!-- Text controls -->
+          <div id="text-controls">
+              <input type="text" id="titleInput" placeholder="Title">
+              <textarea id="descriptionInput" placeholder="Description"></textarea>
+            </div>
+      </div>
+
+  <!-- Template previews -->
+<div id="templatePreviews">
+  <img src="" id="templatePreview1" class="template-preview" alt="Template 1 Preview">
+  <img src="" id="templatePreview2" class="template-preview" alt="Template 2 Preview">
+</div>
+
+  </div>
+</div>
+
+<footer>
+  <h1 style="letter-spacing: 5px">Easy</h1>
+  <div id="contact">
+    <ul class="social">
+      <li><span>Phone: </span>01066666666</li>
+    </ul>
+  </div>
+</footer>
+<script>   
+</script>
+<script src="./script/home.js"></script>
+</body>
+</html>
